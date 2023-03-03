@@ -1,0 +1,17 @@
+{
+  "name": "api-node",
+  "version": "1.0.0",
+  "description": "api with node express",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "author": "Nasir Shaik",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.21"
+  }
+}
