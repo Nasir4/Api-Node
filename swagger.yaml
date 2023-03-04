@@ -1,0 +1,75 @@
+openapi: 3.0.0
+info:
+  title: Social App
+  description: Social Application API documentation - Nasir Shaik
+  version: 1.0.0
+
+servers:
+  - url: http://localhost:4000/api/v1/
+    description: this is options
+  - url: http://localhost:4000/api/v1/
+    description: This is a Testing api
+
+components:
+  securitySchemes:
+    BasicAuth:
+      type: http
+      scheme: basic
+    BearerAuth:
+      type: http
+      scheme: bearer
+
+paths:
+  /socialapp:
+    get:
+      summary: return username, followers and follows
+      responses:
+        "200": # status code
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: string
+                  follows:
+                    type: string
+    post:
+      summary: return username, followers and
+      responses:
+        "201": # status code
+          description: returns an object
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  username:
+                    type: string
+                  followers:
+                    type: string
+                  follows:
+                    type: string
+  /{token}:
+    get:
+      summary: It return a paramas value
+      parameters:
+        - name: token
+          default: 8
+          in: path
+          description: user Token
+          schema:
+            type: string
+      responses:
+        "200": # status code
+          description: successfully retrieved param
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
